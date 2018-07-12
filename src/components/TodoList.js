@@ -6,17 +6,18 @@ import '../App';
 class TodoList extends Component {
 
   render() {
-    const { todoList, onClickDone, disabled } = this.props;
+    const { todoList, onClickDone } = this.props;
     return (
       <div>
         <ul className='listStyle'>
           {
             todoList.map((item, index) =>
             <li key={index} className={item.isDone ? 'isDone' : null}>
-              <FormControlLabel 
-                onClick={onClickDone} 
-                control={<Checkbox title={item.title} />}
-                disabled={disabled} 
+              <FormControlLabel
+                id={item.index}    
+                onChange={onClickDone} 
+                control={<Checkbox title={item.id}/>}
+                disabled={item.isDone}
                 label={item.title} />
             </li>
             )
