@@ -19,7 +19,7 @@
   }
 
   .form {
-
+    display: flex;
     text-align: center;
   }
 
@@ -30,17 +30,19 @@
   }
 
   .textField {
-    width: 350px;
+    width: 300px;
   }
 
   .listStyle {
 
     list-style-type: none;
+    position: absolute;
+    left: -20%;
   }
 
-  Checkbox {
-    color: #777!important;
-  }
-  .check:checked {
-    color: #777!important; 
+
+  li.isDone {
+    text-decoration: line-through!important;
+    color: #ccc!important;
+    
   }

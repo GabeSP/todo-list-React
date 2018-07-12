@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './components/navbar/NavBar';
 import './App.css';
-import TodoForm from './components/TodoForm';
+import Container from './components/Container';
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ savechanges(input, event) {
     return (
       <div>
         <NavBar />
-        <TodoForm />
+        <Container />
       </div>
     );
   }

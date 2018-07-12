@@ -1,19 +1,34 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import '../App';
 
+class TodoList extends Component {
 
-const TodoList = ({todoList}) => (
-  
-  <ul className='listStyle'>
-    {
-      todoList && todoList.map((item, index) =>
-      <li key={index}>
-        <FormControlLabel control={<Checkbox />} label={item} />
-      </li>
-    )
-    }
-  </ul>
-);
+  render() {
+    const { todoList, onClickDone, disabled } = this.props;
+    return (
+      <div>
+        <ul className='listStyle'>
+          {
+            todoList.map((item, index) =>
+            <li key={index} className={item.isDone ? 'isDone' : null}>
+              <FormControlLabel 
+                onClick={onClickDone} 
+                control={<Checkbox title={item.title} />}
+                disabled={disabled} 
+                label={item.title} />
+            </li>
+            )
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
 export default TodoList;
+
+
+
+
